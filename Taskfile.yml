@@ -1,0 +1,33 @@
+default:
+  desc: 帮助文件
+  cmds:
+    - task -l
+
+deps:
+  desc: 下载依赖包
+  dir: src
+  cmds:
+    - ../scripts/deps.sh
+
+init:
+  desc: 安装gopm
+  cmds:
+    - ln -s `pwd`/project `pwd`/src/gproject
+    - go get -u github.com/gpmgo/gopm
+
+build:
+  desc: 编译应用
+  cmds:
+    - GOPATH=`pwd` go build project/cmd/main.go
+
+build_linux:
+  desc: 交叉编译成linux应用
+  cmds:
+    - GOPATH=`pwd` CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build project/cmd/main.go
+
+
+docker_build:
+  desc: 构建docker镜像
+  cmds:
+      - task: build_linux
+      - docker build -t gp .

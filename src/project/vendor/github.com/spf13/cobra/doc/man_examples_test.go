@@ -1,4 +1,4 @@
-package doc_test
+package doc
 
 import (
 	"bytes"

@@ -18,7 +18,7 @@ init:
 build:
   desc: 编译应用
   cmds:
-    - GOPATH=`pwd` go build project/cmd/main.go
+    - GOPATH=/Users/barry/git/yuanben/gproject go build cmd/main.go
 
 build_linux:
   desc: 交叉编译成linux应用

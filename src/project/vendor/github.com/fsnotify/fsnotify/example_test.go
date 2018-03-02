@@ -4,7 +4,7 @@
 
 // +build !plan9
 
-package fsnotify_test
+package fsnotify
 
 import (
 	"log"

@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/spf13/cobra"
 
-	cmds "gproject/cmd/commands"
+	cmds "project/cmd/commands"
 )
 
 func main() {
